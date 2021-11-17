@@ -1,0 +1,24 @@
+private function countBetweenNumbers($start , $end)
+    {
+        $firstStartFive = $start;
+        $startStr = strval($firstStartFive);
+
+        $firstEndFive = $end;
+        $endStr = strval($firstEndFive);
+
+        while(!(strpos($startStr, '5') !== false))
+        {
+            $firstStartFive++;
+            $startStr = strval($firstStartFive);
+        }
+
+        while(!(strpos($endStr, '5') !== false))
+        {
+            $firstEndFive--;
+            $endStr = strval($firstEndFive);
+        }
+
+        $numberOfFives = (($firstEndFive - $firstStartFive) / 10) + 1;
+
+        return $end - $start - $numberOfFives + 1;
+    }
