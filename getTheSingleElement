@@ -1,0 +1,17 @@
+private function getTheSingleElement($array)
+    {
+        $helper = [];
+
+        foreach ($array as $item)
+        {
+            if (($key = array_search($item, $helper)) !== false) {
+                array_splice($helper , $key , 1);
+            } else
+                $helper[] = $item;
+        }
+
+        if(count($helper) > 0)
+            return $helper[0];
+
+        return "all Have twice";
+    }
