@@ -1,0 +1,46 @@
+private function combineString($str1,$str2,$str3){
+        $index = 0;
+        $concatStr = '';
+
+        while (isset($str1[$index]) || isset($str2[$index]) || isset($str3[$index])) {
+            if(isset($str1[$index]))
+            {
+                $concatStr = $concatStr . $str1[$index];
+            }
+
+            if(isset($str2[$index]))
+            {
+                $concatStr = $concatStr . $str2[$index];
+            }
+
+            if(isset($str3[$index]))
+            {
+                $concatStr = $concatStr . $str3[$index];
+            }
+
+            $index++;
+        }
+
+        return $concatStr;
+    }
+
+    private function combineStringArr($arr){
+        $index = 0;
+        $concatStr = '';
+        $tempStr = 'undefined';
+
+        while ($concatStr != $tempStr) {
+            $tempStr = $concatStr;
+
+            foreach ($arr as $value) {
+                if(isset($value[$index]))
+                {
+                    $concatStr = $concatStr . $value[$index];
+                }
+            }
+
+            $index++;
+        }
+
+        return $concatStr;
+    }
